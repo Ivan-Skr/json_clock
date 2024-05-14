@@ -1,0 +1,30 @@
+p{
+    color: #ffc814;
+    margin: 0em;
+    
+}
+
+ul{
+    margin-top: 0em;
+    margin-bottom: 0em;
+    padding-left: 2em;
+    
+}
+
+li{
+    color: white;
+    list-style-type: none;
+    word-spacing: 5px;
+}
+
+span.name{
+    color: #9cdcf0;
+}
+
+span.value{
+    color: #b5cea8;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
