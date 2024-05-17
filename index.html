@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON clock</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+         function digitalClock() {
+            navigator.getBattery().then(function(battery) {
+            var level = battery.level*100;
+            document.getElementById("battery").innerHTML = level;
+        })
+          var date = new Date();
+          var hours = date.getHours();
+          var minutes = date.getMinutes();
+          var seconds = date.getSeconds();
+          var years = date.getFullYear();
+          var month = date.getMonth();
+          var days = date.getDay();
+
+            if (hours < 10) hours = "0" + hours;
+            if (minutes < 10) minutes = "0" + minutes;
+            if (seconds < 10) seconds = "0" + seconds;
+              document.getElementById("hour").innerHTML = hours;
+              document.getElementById("minute").innerHTML = minutes;
+              document.getElementById("second").innerHTML = seconds;
+              document.getElementById("year").innerHTML = years;
+              document.getElementById("month").innerHTML = month;
+              document.getElementById("day").innerHTML = days;
+              setTimeout("digitalClock()", 1000);
+         }
+        </script>
+</head>
+<body style="background-color: #1f1f1f;">
+    <p>&#123;</p>
+    <ul>
+        <li><span class="name">"hour"</span> : <span class="value" id="hour"></span>,</li>
+        <li><span class="name">"minute"</span> : <span class="value" id="minute"></span>,</li>
+        <li><span class="name">"second"</span> : <span class="value" id="second"></span>,</li>
+        <li><span class="name">"year"</span> : <span class="value" id="year"></span>,</li>
+        <li><span class="name">"month"</span> : <span class="value" id="month"></span>,</li>
+        <li><span class="name">"day"</span> : <span class="value" id="day"></span>,</li>
+        <li><span class="name">"battery"</span> : <span class="value", id="battery"></span></li>
+        <script>digitalClock();</script>
+    </ul>
+    <p>&#125;</p>
+    
+</body>
+</html>
